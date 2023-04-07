@@ -20,12 +20,10 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import com.example.practice6.databinding.Screen1Binding;
 import com.example.practice6.MainActivity;
 import com.example.practice6.R;
-import com.example.practice6.ServiceClass;
 
 public class ProfileFragment extends Fragment {
     Screen1Binding binding;
@@ -51,37 +49,6 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Bundle bundle = getArguments();
-        if (bundle != null) {
-            if (bundle.containsKey("rating2"))
-            {
-                rating_book1 = bundle.getFloat("rating2");
-                binding.button4.setText("Вы оценили книгу на "+rating_book1);
-            }
-            else
-            {
-                rating_book2 = bundle.getFloat("rating3");
-                binding.button6.setText("Вы оценили книгу на "+rating_book2);
-            }
-
-        }
-        binding.button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_profile_fragment_to_first_book_fragment);
-            }
-        });
-        binding.button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_profile_fragment_to_second_book__fragment);
-            }
-        });
-        binding.imageButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_profile_fragment_to_book_list_fragment);
-            }
-        });
         // Создаем канал уведомлений (для Android 8.0 и выше)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Мой канал";
@@ -113,8 +80,8 @@ public class ProfileFragment extends Fragment {
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(requireContext(),
                         CHANNEL_ID)
                         .setSmallIcon(R.drawable.bell) //маленькая иконка
-                        .setContentTitle("Библиотека") //заголовок
-                        .setContentText("Вам пришло уведомление из библиотеки!") //текст уведомления
+                        .setContentTitle("Трекер воды") //заголовок
+                        .setContentText("Пора пить воду!") //текст уведомления
                         .setAutoCancel(true) // автоматически закрывает уведомление после нажатия
                         .setContentIntent(pendingIntent)// добавляем PendingIntent
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
@@ -125,7 +92,7 @@ public class ProfileFragment extends Fragment {
 
 
         });
-        binding.button2.setOnClickListener(new View.OnClickListener() {
+        binding.imagebutton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(getContext())) {
@@ -133,7 +100,6 @@ public class ProfileFragment extends Fragment {
                             Uri.parse("package:" + getActivity().getPackageName()));
                     startActivity(intent);
                 } else {
-                    // Permission granted, start the service
                     Intent intent = new Intent(getActivity(), ServiceClass.class);
                     getActivity().startService(intent);
                 }

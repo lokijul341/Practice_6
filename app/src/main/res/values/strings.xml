@@ -1,13 +1,7 @@
 <resources>
     <string name="app_name">Practice6</string>
-    <string name="book_name1">Дж. К. Роулинг\nГарри Поттер и Философский камень</string>
-    <string name="book_name2">Дж. К. Роулинг\nГарри Поттер и Тайная комната</string>
-    <string name="read_books_list">Ваши прочитанные книги:</string>
-    <string name="preferences">Предпочтения в книгах</string>
-    <string name="fio">Иван Иванов</string>
-    <string name="number">#1234-5678-90</string>
-    <string name="header1">Ваш читательский билет</string>
-    <string name="header2">ЧИТАТЕЛЬСКИЙ БИЛЕТ</string>
+    <string name="number">Ваша норма воды в день:</string>
+    <string name="header2">2000 мл</string>
     <string name="book_page_rating">Оценить книгу</string>
     <string name="download_ebook">Скачать электронную версию</string>
     <string name="book1_author">Дж. К. Роулинг</string>
@@ -24,4 +18,21 @@
     <string name="notification_text">Вам пришло уведомление!</string>
     <string name="open_in_window">Открыть в окне</string>
     <string name="books">Доступные книги</string>
+    <string name="header1">Ваш читательский билет</string>
+    <string name="book_name1">Дж. К. Роулинг\nГарри Поттер и Философский камень</string>
+    <string name="book_name2">Дж. К. Роулинг\nГарри Поттер и Тайная комната</string>
+    <string name="read_books_list">Ваши прочитанные книги:</string>
+    <string name="preferences">Предпочтения в книгах</string>
+    <string name="fio">Иван Иванов</string>
+    <string name="my_text_field_hint">Цель на день: </string>
+    <string name="my_text_field_hint2">2000</string>
+    <string name="my_text_field_hint3">Выполнено:</string>
+    <string name="my_text_field_hint4">1200</string>
+    <string name="my_text_field_hint5">Вы на пути к цели!</string>
+    <string name="my_text_field_hint6">День 1</string>
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="name">Name</string>
+    <string name="closeactivity">CloseActivity</string>
+    <string name="complete">Готово</string>
 </resources>
